@@ -1,0 +1,33 @@
+{% extends "Header2.html" %}
+{% block title %}doctor Dashboard{% endblock %}
+{% block content %}
+<html>
+<head>
+<style>
+.btn {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 1% 5%;
+  text-align: center;
+  font-size: 100%;
+  margin: 1% 1%;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+  color: white;
+}
+</style>
+</head>
+<body>
+    <h1>1) Wave Patient Card</h1>
+    <form action="/Search_card_no/{{ uname }}"><button class="btn">check here</button></form>
+    <h1>2) Doctor Past Patient Record</h1>
+    <form action="/doctor_past_patient/{{ uname }}"><button class="btn">check patient</button></form>
+    <h1>3) Notify Doctor (Communicate With Patient)</h1>
+    <form action="/notify_doctor/"></form><button class="btn">check Notification</button></form>
+</body>
+</html>
+{% endblock %}

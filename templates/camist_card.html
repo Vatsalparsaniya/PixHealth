@@ -1,0 +1,112 @@
+{% extends "Header2.html" %}
+{% block title %}Past Patient{% endblock %}
+{% block content %}
+<html>
+<head>
+<style>
+
+body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f1f1;
+            }
+
+            * {
+            box-sizing: border-box;
+            }
+
+            .container {
+            padding: 20px;
+            background-color: white;
+            }
+
+            input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+            }
+
+            input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+            }
+
+
+            hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+            }
+
+            .registerbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+            }
+
+            .registerbtn:hover {
+            opacity: 1;
+            }
+
+            a {
+            color: dodgerblue;
+            }
+
+            .signin {
+            background-color: #f1f1f1;
+            text-align: center;
+            }
+
+            table, td, th {  
+            border: 1px solid #ddd;
+            text-align: left;
+            }
+
+            table {
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            th, td {
+            padding: 5px;
+            }
+            .btn {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 1% 5%;
+  text-align: center;
+  font-size: 100%;
+  margin: 1% 1%;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+  color: white;
+}
+</style>
+  
+</head>
+<body>
+        <div style="overflow-x:auto;">
+                <table>
+                    {% for row in Data: %}
+                    <tr>
+                    {% for value in row:%}
+                    <th>{{ value }}</th>
+                    {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+        </div> 
+        <form action="/chemist_deshboardd/{{ uname }}/"><button class="btn">back</button></form>   
+</body>
+</html>
+{% endblock %}

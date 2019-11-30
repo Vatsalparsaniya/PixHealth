@@ -1,0 +1,39 @@
+{% extends "Header2.html" %}
+{% block title %}Patient dashboard{% endblock %}
+{% block content %}
+<html>
+<head>
+<style>
+    .btn {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 1% 5%;
+    text-align: center;
+    font-size: 100%;
+    margin: 1% 1%;
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #3e8e41;
+    color: white;
+  }
+</style>
+
+</head>
+<body>
+    <h1>1. Personal Details</h1>
+    <form action="/Pdetail/{{ uname }}/"><button class="btn">check here</button></form>
+    <h1>2. Medical History</h1>
+    <form action="/Mhistory/{{ uname }}/"><button class="btn">check here</button></form>
+    <h1>3. Next Appoitments</h1>
+    <form action="/apoitments/{{ uname }}/"><button class="btn">check here</button></form>
+    <h1>4. Medicines Data</h1> 
+    <form action="/Search_card_no/{{ uname }}/"><button class="btn">check here</button></form>
+    <h1>5. Near Hospital</h1> 
+    <form action="/near_hospitals/{{ uname }}/"><button class="btn">check here</button></form>
+    <!-- <h1>6. </h1>    -->
+</body>
+</html>
+{% endblock %}

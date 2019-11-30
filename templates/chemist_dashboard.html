@@ -1,0 +1,29 @@
+{% extends "Header2.html" %}
+{% block title %}Chemist Deshboard{% endblock %}
+{% block content %}
+<html>
+<head>
+<style>
+    .btn {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 1% 5%;
+  text-align: center;
+  font-size: 100%;
+  margin: 1% 1%;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+  color: white;
+}
+</style>
+</head>
+<body>
+    <h1>1.scratch</h1>
+    <form action="/chemist_scratch_data/{{ uname }}"><button class="btn">check here</button></form>
+</body>
+</html>
+{% endblock %}

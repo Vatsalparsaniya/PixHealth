@@ -1,0 +1,102 @@
+{% extends "Header2.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f1f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 20px;
+  background-color: white;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: dodgerblue;
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+    <h1>BASIC DETAILS :</h1>
+    <h2>Name : {{ first[0][0] }}</h2>
+    <h2>DOB : {{ first[0][1] }}</h2>
+    <h2>Phone No : {{ first[0][2] }}</h2>
+    <h2>AGE : {{ first[0][3] }}</h2>
+    <h2>Gender : {{ first[0][4] }}</h2>
+    <h2>Height : {{ first[0][5] }}</h2>
+    <h2>weight : {{ first[0][6] }}</h2>
+    <h2>Genetic Disease : {{ first[0][7] }}</h2>
+    <h2>Cronicdisease : {{ first[0][8] }}</h2>
+    <h2>Allergies : {{ first[0][9] }}</h2>
+    <form action="/updatedetails/{{ uname }}/{{ first[0][10] }}/" method="POST">
+        <div class="container">
+                <h1>New Visit Details</h1>
+                <hr>
+                <label for="caseflow"><b>Case flow</b></label>
+                <input type="text" placeholder="Enter case flow details" name="caseflow" required>
+                <label for="hospital"><b>hospital</b></label>
+                <input type="text" placeholder="Enter hospital details" name="hospital" required>
+                <label for="Diagnosis"><b>Diagnosis</b></label>
+                <input type="text" placeholder="Enter Diagnosis" name="Diagnosis" required>
+                <label for="Prescrioption"><b>Prescrioption</b></label>
+                <input type="text" placeholder="Enter Prescrioption" name="Prescrioption" required>
+                <label for="Report"><b>Report</b></label>
+                <input type="text" placeholder="Enter Report details" name="Report" required>
+                <hr>
+                <button type="submit" class="registerbtn">Submit</button>
+        </div>
+    </form>
+    <!-- <h1>{{ first[0] }}</h1> -->
+    <!-- <h1>{{ second }}</h1> -->
+    <!-- <h1>{{ card_number }}</h1> -->
+    <!-- <h1>{{ uname }}</h1> -->
+</body>
+</html>
+{% endblock %}
