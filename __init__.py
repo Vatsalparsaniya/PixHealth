@@ -119,7 +119,7 @@ def signup():
 def Search_card_no(user):
     # render_template("get_card_details.html",uname=user)
     # get user card Data
-    host = '192.168.43.47' # as both code is running on same pc
+    host = '192.168.60.47' # as both code is running on same pc
     port = 5005 # socket server port number
 
     client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)  # instantiate
@@ -198,7 +198,7 @@ def patient_dashboardd(uname):
 
 @app.route("/chemist_scratch_data/<uname>/")
 def chemist_scratch_data(uname):
-    host = '192.168.43.47' # as both code is running on same pc
+    host = '192.168.60.47' # as both code is running on same pc
     port = 5005 # socket server port number
 
     client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)  # instantiate
