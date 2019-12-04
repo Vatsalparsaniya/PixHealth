@@ -18,11 +18,11 @@
 
 # Team-Members
 
-![vatsal parsaniya](https://github.com/Vatsalparsaniya)
-![Tanmeet Butani](https://github.com/tanmeet1)
-![Darshit vachhani](https://github.com/darshitvachhani)
-![Donga Bhautik](https://github.com/BhautikDonga)
-![Twinkle Bhimani](https://github.com/Twinkle-Patel)
-![Yash Bokil](https://github.com/yash730)
-![parth chauhan](https://github.com/parthss)
-![jinish shah](https://github.com/Vatsalparsaniya)
+* ![vatsal parsaniya](https://github.com/Vatsalparsaniya)
+* ![Tanmeet Butani](https://github.com/tanmeet1)
+* ![Darshit vachhani](https://github.com/darshitvachhani)
+* ![Donga Bhautik](https://github.com/BhautikDonga)
+* ![Twinkle Bhimani](https://github.com/Twinkle-Patel)
+* ![Yash Bokil](https://github.com/yash730)
+* ![parth chauhan](https://github.com/parthss)
+* ![jinish shah](https://github.com/Vatsalparsaniya)
