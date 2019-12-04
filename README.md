@@ -29,4 +29,4 @@ We have aadhar card , Pan card, Voter id, Driving licence like identity proofs f
 * ![Twinkle Bhimani](https://github.com/Twinkle-Patel)
 * ![Yash Bokil](https://github.com/yash730)
 * ![parth chauhan](https://github.com/parthss)
-* ![jinish shah](https://github.com/Vatsalparsaniya)
+* ![jinish shah](https://github.com/jinishshah00)
