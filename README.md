@@ -1,6 +1,10 @@
 # LET-S-HACK-2.0
 24 hours Let's Hack 2.0, Hackathon 
 
+# Presentation
+
+![prezi(click here)](https://prezi.com/view/wkkycnHKSYcC5AzOBjd8/)
+
 # Problem Statment
 
   ![Problem Statment](Images/8.png)
