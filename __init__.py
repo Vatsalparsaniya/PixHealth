@@ -14,7 +14,7 @@ app.config.update(
     MYSQL_HOST= 'localhost',
     MYSQL_USER='vatsal',
     MYSQL_PASSWORD='12345678',
-    MYSQL_DB='smartcard'
+    MYSQL_DB='sys'
 )
 app.secret_key = 'vatsalparsaniya'
 mysql = MySQL(app)
@@ -101,7 +101,7 @@ def clogin_check():
         if (email,password) in data:
             flash("Loged in Successfully")
             cur = mysql.connection.cursor()
-            cur.execute("SELECT USER FROM sys.chemist WHERE EMAIL=\'"+email+"\';")
+            cur.execute("SELECT EMAIL FROM sys.chemist WHERE EMAIL=\'"+email+"\';")
             uname = cur.fetchall()
             mysql.connection.commit()
             cur.close()
@@ -119,7 +119,7 @@ def signup():
 def Search_card_no(user):
     # render_template("get_card_details.html",uname=user)
     # get user card Data
-    host = '192.168.60.47' # as both code is running on same pc
+    host = '192.168.43.47' # as both code is running on same pc
     port = 5005 # socket server port number
 
     client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)  # instantiate
@@ -136,6 +136,7 @@ def Search_card_no(user):
     # card_number = 12
     # time.sleep(2)
     print(rdata)
+    # rdata="760207156235"
     cur = mysql.connection.cursor()
     # cur.execute("SELECT USER FROM sys.chemist WHERE EMAIL=\'"+email+"\';")
     cur.execute("SELECT * FROM sys.basic_details WHERE CARDNUMBER='"+str(rdata)+"';")
@@ -198,7 +199,7 @@ def patient_dashboardd(uname):
 
 @app.route("/chemist_scratch_data/<uname>/")
 def chemist_scratch_data(uname):
-    host = '192.168.60.47' # as both code is running on same pc
+    host = '192.168.43.47' # as both code is running on same pc
     port = 5005 # socket server port number
 
     client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)  # instantiate
@@ -215,7 +216,7 @@ def chemist_scratch_data(uname):
     first = cur.fetchall()
     mysql.connection.commit()
     cur.close()
-    return render_template("camist_card.html",Data=first)
+    return render_template("camist_card.html",Data=first,uname=uname)
 
 @app.route("/chemist_deshboardd/<uname>/")
 def chemist_dashboardd(uname):
@@ -230,7 +231,18 @@ def Mhistory(uname):
     # cur.execute("SELECT * FROM sys.p_medical_visits WHERE DOCTOR='Tanmeet';")
     mysql.connection.commit()
     cur.close()
-    return render_template("Hdata.html",Data=first)
+    return render_template("Hdata.html",Data=first,uname=uname)
+
+@app.route("/Mphistory/<uname>/")
+def Mphistory(uname):
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM sys.p_medical_visits;")
+    first = cur.fetchall()
+    print(first)
+    # cur.execute("SELECT * FROM sys.p_medical_visits WHERE DOCTOR='Tanmeet';")
+    mysql.connection.commit()
+    cur.close()
+    return render_template("Hpdata.html",Data=first,uname=uname)
 
 @app.route("/chemist_dashboardd/<uname>/")
 def chemist_desbd(uname):
