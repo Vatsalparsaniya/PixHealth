@@ -92,11 +92,13 @@ body {
   color: white;
 }
 </style>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css')}}">
 </head>
 <body>
-        <div style="overflow-x:auto;">
-                <table>
+        <!-- <div style="overflow-x:auto;"> -->
+                <!-- <table>
                     {% for row in Data: %}
                     <tr>
                     {% for value in row:%}
@@ -104,9 +106,41 @@ body {
                     {% endfor %}
                     </tr>
                     {% endfor %}
-                </table>
-        </div> 
+                </table> -->
+				<div class="table100 ver2 m-b-110">
+					<table data-vertable="ver2">
+						<thead>
+							<tr class="row100 head">
+								<th class="column100 column1" data-column="column1">Card No</th>
+								<th class="column100 column2" data-column="column2">Case Flow Number</th>
+								<th class="column100 column3" data-column="column3">Doctor Name</th>
+								<th class="column100 column4" data-column="column4">Hospital</th>
+								<th class="column100 column5" data-column="column5">Date of visit</th>
+								<th class="column100 column6" data-column="column6">Diagnosis</th>
+								<th class="column100 column7" data-column="column7">Prescriopyion</th>
+								<th class="column100 column8" data-column="column8">Report Link</th>
+							</tr>
+						</thead>
+						<tbody>
+                                                        {% for row in Data: %}
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">{{ row[0] }}</td>
+								<td class="column100 column2" data-column="column2">{{ row[1] }}</td>
+								<td class="column100 column3" data-column="column3">{{ row[2] }}</td>
+								<td class="column100 column4" data-column="column4">{{ row[3] }}</td>
+								<td class="column100 column5" data-column="column5">{{ row[4] }}</td>
+								<td class="column100 column6" data-column="column6">{{ row[5] }}</td>
+								<td class="column100 column7" data-column="column7">{{ row[6] }}</td>
+                                                                <td class="column100 column8" data-column="column8">{{ row[7] }}</td> 
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+	
+        <!-- </div>  -->
         <form action="/doctor_deshboard/{{ uname }}/"><button class="btn">back</button></form>   
+        <script src="{{ url_for('static', filename='js/main.js')}}"></script>
 </body>
 </html>
 {% endblock %}

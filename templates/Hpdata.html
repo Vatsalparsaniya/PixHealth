@@ -92,31 +92,43 @@ body {
   color: white;
 }
 </style>
-  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css')}}">
 </head>
 <body>
-        <div style="overflow-x:auto;">
-                <table>
-                        <tr>
-                                <th>Card No</th>
-                                <th>Case Flow</th>
-                                <th>Doctor</th>
-                                <th>Hospital</th>
-                                <th>Date</th>
-                                <th>DIGNOSIS</th>
-                                <th>PRESCRIOPTION</th>
-                                <th>REPORTLINK</th>
-                            </tr>
-                    {% for row in Data: %}
-                    <tr>
-                    {% for value in row:%}
-                    <th>{{ value }}</th>
-                    {% endfor %}
-                    </tr>
-                    {% endfor %}
+        <div class="table100 ver2 m-b-110">
+                <table data-vertable="ver2">
+                        <thead>
+                                <tr class="row100 head">
+                                        <th class="column100 column1" data-column="column1">Date</th>
+                                        <th class="column100 column2" data-column="column2">Doctor</th>
+                                        <th class="column100 column3" data-column="column3">Diagnosis</th>
+                                        <th class="column100 column4" data-column="column4">Doctor ID</th>
+                                        <th class="column100 column5" data-column="column5">Hospital</th>
+                                        <th class="column100 column6" data-column="column6">PrescriptionUrl</th>
+                                        <th class="column100 column7" data-column="column7">ReportUrl</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                {% for val in values %}
+                                <tr class="row100">
+                                        <td class="column100 column1" data-column="column1">{{ val["Date"] }}</td>
+                                        <td class="column100 column2" data-column="column2">{{ val["Doctor"] }}</td>
+                                        <td class="column100 column3" data-column="column3">{{ val["Diagnosis"] }}</td>
+                                        <td class="column100 column4" data-column="column4">{{ val["DoctorID"] }}</td>
+                                        <td class="column100 column5" data-column="column5">{{ val["Hospital"] }}</td>
+                                        <td class="column100 column6" data-column="column6">{{ val["PrescriptionUrl"] }}</td>
+                                        <td class="column100 column7" data-column="column7">{{ val["ReportUrl"] }}</td>
+                                </tr>
+                                {% endfor %}
+                        </tbody>
                 </table>
-        </div> 
-        <form action="/patient_dashboardd/{{ uname }}/"><button class="btn">back</button></form>   
+        </div>
+
+<!-- </div>  -->
+<form action="/patient_dashboardd/{{ uname }}/"><button class="btn">back</button></form>   
+<script src="{{ url_for('static', filename='js/main.js')}}"></script>
 </body>
 </html>
 {% endblock %}

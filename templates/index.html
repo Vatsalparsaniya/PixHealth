@@ -18,8 +18,8 @@
   margin: 10px 0;
   border: none;
   cursor: pointer;
-  font-size: 40px;
-  width: 90%;
+  font-size: 150%;
+  width: 40%;
   opacity: 0.9;
 }
 .button1{
@@ -30,6 +30,9 @@
 }
 .button3{
 	background-color: red;
+}
+.button4{
+	background-color:cornflowerblue;
 }
 .button span {
   cursor: pointer;
@@ -57,31 +60,28 @@
 }
 
 </style>
-<body>
-	<div class="w3-content" style="width:400px height: 400px;">
-		  <div class="mySlides w3-container w3-red">
-			<h1><b class="w3-tag w3-yellow">1</b></h1>
-			<h1><i>You can't enjoy wealth, if you are not in good <b>Helth</b> </i></h1>
+<body style=" background-size: 110% 150%; background-repeat: no-repeat; background-image: url('/static/img/backgroung_index.jpg');">
+	<div class="w3-content" style="width:400px height:400px;">
+		  <div class="mySlides w3-container w3">
+			<h1><b class="w3-tag w3-yellow">1</b>  You can't enjoy wealth, if you are not in good Helth </h1>
 		  </div>
-		  <div class="mySlides w3-container w3-blue">
-			<h1><b class="w3-tag w3-yellow">2</b></h1>
-			<h1><i>       Go Paperless - Save Trees                       </i></h1>
+		  <div class="mySlides w3-container w3">
+			<h1><b class="w3-tag w3-yellow">2</b>  Go Paperless - Save Trees</h1>
 		  </div>
-		  <div class="mySlides w3-container w3-green">
-			<h1><b class="w3-tag w3-yellow">3</b></h1>
-			<h1><i>                         #DIGITALINDIA                                    </i></h1>
+		  <div class="mySlides w3-container w3">
+			<h1><b class="w3-tag w3-yellow">3</b>  #DIGITALINDIA </h1>
 		  </div>
 	</div>
 	<div>
       <form action="/doctor_login/"><button class="registerbtn button1"><span>i'm a Doctor</span></button></form>
       <form action="/patient_login/"><button class="registerbtn button2"><span>i'm a Patient</span></button></form>
       <form action="/chemist_login/"><button class="registerbtn button3"><span>i'm a Chemist</span></button></form>
+      <form action="/chemist_login/"><button class="registerbtn button4"><span>apun hi j bhagavan he </span></button></form>
 	</div>	
 </body>
 <script>
 var slideIndex = 0;
 carousel();
-
 function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
