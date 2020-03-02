@@ -1,5 +1,8 @@
-import json 
+import json
+from optparse import Values
+
 import pyrebase
+from decorator import append
 
 config = {
   "apiKey": "AIzaSyDvNt03NBUB8Sue1siFXMGu0QnE_sMDVdk",
@@ -99,6 +102,34 @@ auth = firebase.auth()
 # result = db.child("Users").child("121234567890").get().val()
 # print(result["Details"])
 
-result = db.child("Users").child("121234567890").get().val()["Reports"]
+# result = db.child("Hospitals").get().val()
 
-print(key)
+# print(result)
+
+# from datetime import datetime
+# datetime.today().strftime('%d-%m-%Y')
+
+
+# result =  db.child("Users").child("188320981535").child("Details").get().val()["Name"]
+# print(result)
+# keys = []
+# value = []
+# for key , val  in result.items():
+#   keys.append(key)
+#   value.append(val)
+# length = len(value)
+# next_id = length+1
+# next_id = "Id"+str(next_id)
+# print("nextID",next_id)
+
+# db.child("Users").child("188320981535").child("Reports").child("Id3").set({"Date":"10/12/2020","Doctor":"vatsal pp"})
+# result = storage.child("Prescription/{}/reportid/User2.jpg".format("188320981535")).put("static/img/1.jpg")
+# print(result)
+# url = storage.child("Prescription/188320981535/reportid/User1.jpg").get_url(1)
+# print(url)
+
+# result = db.child("Doctors").child(121234567890).child("PastRecords").get().val()
+# print(len(result))
+
+result = db.child('Users').child("188320981535").child("Reports").child("Id"+str(3)).get().val()["PrescriptionUrl"]
+print(result)

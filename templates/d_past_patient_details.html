@@ -151,17 +151,16 @@ a {
                             <td class="column100 column4" data-column="column4">{{ val["DoctorID"] }}</td>
                             <td class="column100 column5" data-column="column5">{{ val["Hospital"] }}</td>
                             <td class="column100 column6" data-column="column6">
-    
-                              <a href="{{ val['PrescriptionUrl'] }}"><button style="background-color:#ddd">Click Here</button></a>
-                              <br>
-                              
-                      </td>
-                      <td class="column100 column7" data-column="column7">
+                             
+                                <a href="{{ val['PrescriptionUrl'] }}"><button style="background-color:#ddd">Click Here</button></a>
+                                <br>
                             
-                        <a href="{{ val['ReportUrl'] }}"><button style="background-color:#ddd">Click Here</button></a>
-                           
-                              
-                      </td>
+                        </td>
+                        <td class="column100 column7" data-column="column7">
+                               
+                          <a href="{{ val['ReportUrl'] }}"><button style="background-color:#ddd">Click Here</button></a>
+                                <br>
+                        </td>
                     </tr>
                     {% endfor %}
             </tbody>
@@ -170,20 +169,9 @@ a {
 
 
 
-    <form action="/updatedetails/{{ uname }}/{{ patientid }}/" method="POST">
+    <form action="/doctor_past_patient/{{ uname }}/">
         <div class="container">
-                <h1>New Visit Details</h1>
-                <hr>
-                <label for="Diagnosis"><b>Diagnosis</b></label>
-                <input type="text" placeholder="Enter Diagnosis details" name="Diagnosis" required>
-                <label for="Meds"><b>Medicine</b></label>
-                <input type="text" placeholder="Enter Medicine details" name="Meds" required>
-                <label for="quantity"><b>quantity</b></label>
-                <input type="text" placeholder="Enter quantity" name="quantity" required>
-                <label for="Dosage"><b>Dosage</b></label>
-                <input type="text" placeholder="Enter Dosage" name="Dosage" required>
-                <hr>
-                <button type="submit" class="registerbtn">Submit</button>
+                <button type="submit" class="registerbtn">Back</button>
         </div>
     </form>
 </body>

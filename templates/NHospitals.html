@@ -1,5 +1,5 @@
 {% extends "Header2.html" %}
-{% block title %}Past Patient{% endblock %}
+{% block title %}Hospitals{% endblock %}
 {% block content %}
 <html>
 <head>
@@ -92,13 +92,32 @@ body {
   color: white;
 }
 </style>
-  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css')}}">
 </head>
 <body>
-        <div style="overflow-x:auto;">
-                <a href="{{ Data['PrescriptionUrl']+'alt=media&token=1' }}">{{ Data['PrescriptionUrl']+'alt=media&token=1' }}</a>
-        </div> 
-        <form action="/chemist_dashboardd/{{ uname }}/"><button class="btn">back</button></form>   
+        <div class="table100 ver2 m-b-110">
+                <table data-vertable="ver2" style="max-width: 500px;">
+                        <thead>
+                                <tr class="row100 head">
+                                        <th class="column100 column1" data-column="column1">Hospitals</th>
+                                        
+                                </tr>
+                        </thead>
+                        <tbody>
+                                {% for val in values %}
+                                <tr class="row100">
+                                        <td class="column100 column1" data-column="column1">{{ val }}</td>
+                                </tr>
+                                {% endfor %}
+                        </tbody>
+                </table>
+        </div>
+
+<!-- </div>  -->
+<form action="/patient_dashboardd/{{ uname }}/"><button class="btn">back</button></form>   
+<script src="{{ url_for('static', filename='js/main.js')}}"></script>
 </body>
 </html>
 {% endblock %}

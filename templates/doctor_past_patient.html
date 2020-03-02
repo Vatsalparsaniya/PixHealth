@@ -111,27 +111,19 @@ body {
 					<table data-vertable="ver2">
 						<thead>
 							<tr class="row100 head">
-								<th class="column100 column1" data-column="column1">Card No</th>
-								<th class="column100 column2" data-column="column2">Case Flow Number</th>
-								<th class="column100 column3" data-column="column3">Doctor Name</th>
-								<th class="column100 column4" data-column="column4">Hospital</th>
-								<th class="column100 column5" data-column="column5">Date of visit</th>
-								<th class="column100 column6" data-column="column6">Diagnosis</th>
-								<th class="column100 column7" data-column="column7">Prescriopyion</th>
-								<th class="column100 column8" data-column="column8">Report Link</th>
+								<th class="column100 column1" data-column="column1">Date</th>
+								<th class="column100 column2" data-column="column2">Patient Id</th>
+                                                                <th class="column100 column3" data-column="column3">Diagnosis</th>
 							</tr>
 						</thead>
 						<tbody>
-                                                        {% for row in Data: %}
+                                                        {% for d2 in Data %}
 							<tr class="row100">
-								<td class="column100 column1" data-column="column1">{{ row[0] }}</td>
-								<td class="column100 column2" data-column="column2">{{ row[1] }}</td>
-								<td class="column100 column3" data-column="column3">{{ row[2] }}</td>
-								<td class="column100 column4" data-column="column4">{{ row[3] }}</td>
-								<td class="column100 column5" data-column="column5">{{ row[4] }}</td>
-								<td class="column100 column6" data-column="column6">{{ row[5] }}</td>
-								<td class="column100 column7" data-column="column7">{{ row[6] }}</td>
-                                                                <td class="column100 column8" data-column="column8">{{ row[7] }}</td> 
+								<td class="column100 column1" data-column="column1">{{ d2["Date"] }}</td>
+								<td class="column100 column2" data-column="column2">
+                                                                        <form action="/d_past_patient_details/{{ uname }}/{{ d2['PatientId'] }}/"><button class="btn">{{ d2['PatientId'] }}</button></form>
+                                                                </td>
+                                                                <td class="column100 column3" data-column="column3">{{ d2["Diagnosis"] }}</td>
 							</tr>
 							{% endfor %}
 						</tbody>

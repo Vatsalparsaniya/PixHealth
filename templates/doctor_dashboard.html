@@ -19,15 +19,77 @@
   background-color: #3e8e41;
   color: white;
 }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f1f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 20px;
+  background-color: white;
+}
+
+input[type=text], input[type=password] {
+  width: 30%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: dodgerblue;
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
 </style>
 </head>
-<body  style=" background-size: 110% 150%; background-repeat: no-repeat; background-image: url('/static/img/backgroung_index.jpg');">
+<body  style=" background-size: 110% 180%; background-repeat: no-repeat; background-image: url('/static/img/backgroung_index.jpg');">
     <h1>1) Wave Patient Card</h1>
-    <form action="/Search_card_no/{{ uname }}"><button class="btn">check here</button></form>
-    <h1>2) Doctor Past Patient Record</h1>
-    <form action="/doctor_past_patient/{{ uname }}"><button class="btn">check patient</button></form>
-    <h1>3) Notify Doctor (Communicate With Patient)</h1>
-    <form action="/notify_doctor/"></form><button class="btn">check Notification</button></form>
+    <form action="/Search_card_no/{{ uname }}/"><button class="btn">Check here</button></form>
+    <h1>2) Get Patient Details by ID</h1>
+    <form action="/p_details_by_id/{{ uname }}/" method="POST">
+      <label for="PID"><b>Patient ID</b></label><br>
+                <input type="text" placeholder="Enter Patient ID" name="PID" required>
+      <button class="submit">Click here</button>
+    </form>
+    <h1>3) Doctor Past Patient Record</h1>
+    <form action="/doctor_past_patient/{{ uname }}/"><button class="btn">Check patient</button></form>
 </body>
 </html>
 {% endblock %}

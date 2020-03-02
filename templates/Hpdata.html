@@ -98,6 +98,7 @@ body {
 </head>
 <body>
         <div class="table100 ver2 m-b-110">
+                <p style="font-size: 40px;">Medical Data</p>
                 <table data-vertable="ver2">
                         <thead>
                                 <tr class="row100 head">
@@ -118,8 +119,18 @@ body {
                                         <td class="column100 column3" data-column="column3">{{ val["Diagnosis"] }}</td>
                                         <td class="column100 column4" data-column="column4">{{ val["DoctorID"] }}</td>
                                         <td class="column100 column5" data-column="column5">{{ val["Hospital"] }}</td>
-                                        <td class="column100 column6" data-column="column6">{{ val["PrescriptionUrl"] }}</td>
-                                        <td class="column100 column7" data-column="column7">{{ val["ReportUrl"] }}</td>
+                                        <td class="column100 column6" data-column="column6">
+                                            
+                                                <a href="{{ val['PrescriptionUrl'] }}"><button style="background-color:cornflowerblue; border-radius: 20%;">Click Here</button></a>
+                                                
+                                               
+                                        </td>
+                                        <td class="column100 column7" data-column="column7">
+                                               
+                                                <a href="{{ val['ReportUrl'] }}"><button style="background-color:cornflowerblue; border-radius: 20%;">Click Here</button></a>
+                                                <br>
+                                          
+                                        </td>
                                 </tr>
                                 {% endfor %}
                         </tbody>
