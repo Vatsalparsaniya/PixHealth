@@ -10,16 +10,18 @@ We have aadhar card , Pan card, Voter id, Driving licence like identity proofs f
 
   ![Problem Statment](Images/8.png)
 
+
 # Web-site
 
-  ![Home Page](Images/1.png)
-
+  ![Home Page](Pix-Health/Web-Portal_SC/1.jpeg)
+  ![Home Page](Pix-Health/Web-Portal_SC/2.jpeg)
+  ![Home Page](Pix-Health/Web-Portal_SC/3.jpeg)
 
 # Application
 
-<img src="Images/a1.jpeg" width="300">  <img src="Images/a02.jpeg" width="300"> 
+<img src="Pix-Health/App_SC/app1.jpeg" width="300">  <img src="Pix-Health/App_SC/app2.jpeg" width="300"> 
 
-<img src="Images/a2.jpeg" width="300">  <img src="Images/a3.jpeg" width="300"> 
+<img src="Pix-Health/App_SC/app3.jpeg" width="300">  <img src="Pix-Health/App_SC/app4.jpeg" width="300"> 
 
 # Team-Members
 
